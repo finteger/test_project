@@ -26,9 +26,6 @@ describe('User Utilities', () => {
             });
         });
 
-
-
-
 });
 
 
