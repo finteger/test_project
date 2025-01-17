@@ -7,7 +7,8 @@ function getUserFullName(user){
 }
 
 function calculateAge(birthYear, currentYear){
-    if(isNaN(birthYear) || isNaN(currentYear)){
+
+    if(isNaN(birthYear) || isNaN(currentYear || birthYear % 1 == 0 || currentYear % 1 == 0 )){
         throw new Error('Invalid year');
     }
 
