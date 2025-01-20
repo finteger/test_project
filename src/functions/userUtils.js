@@ -8,14 +8,19 @@ function getUserFullName(user){
 
 function calculateAge(birthYear, currentYear){
 
-    if(isNaN(birthYear) || isNaN(currentYear || birthYear % 1 == 0 || currentYear % 1 == 0 )){
+    if (
+        isNaN(birthYear) || 
+        isNaN(currentYear) || 
+        birthYear % 1 !== 0 || 
+        currentYear % 1 !== 0
+    ) {
         throw new Error('Invalid year');
     }
 
    const age = currentYear - birthYear;
 
     //Boundary condition
-    if(age <= 0 && age > 124){
+    if(age <= 0 || age > 124){
         throw new Error('Invalid birth year');
     } else {
         return age;
