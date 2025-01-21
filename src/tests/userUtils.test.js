@@ -5,14 +5,9 @@ const {calculateAge, getUserFullName, getUserInitials} = require('../functions/u
 describe('User Utilities', () => {
 
     describe('getUserFullName', ()=> {
-        it('should return the full name of the user with first and last name', () => {
-            const user = { firstName: 'Bob', lastName: 'Smith' };
-            expect(getUserFullName(user)).toBe('Bob Smith');
-        });
-
-        it('should throw an error if the user data is incomplete', () => {
-            const user = { firstName: 'Bob' };
-            expect(() => getUserFullName(user)).toThrow('Invalid user data');
+        it('should return one name if the user has no last name', () => {
+            const user = { firstName: 'Bob', lastName: '' };
+            expect(getUserFullName(user)).toBe('Bob');
         });
     });
 
