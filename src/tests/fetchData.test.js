@@ -28,7 +28,16 @@ describe('fetchData', ()=>{
 
     
     it('throws an error when the network response is not okay', async () => {
-        fetch.mockResolvedValueOnce({ok: false});
+        fetch.mockResolvedValueOnce({ ok: false });
+
         await expect(fetchData('https://jsonplaceholder.typicode.com/todos/1')).rejects.toThrow('There was a network error');
     });
 });
+
+/*
+ Response.json() was not awaited, 
+ so the function returned a Promise instead of the resolved JSON object.
+ This would cause the test for JSON equality 
+ to fail (expect(data).toEqual(mockResponse)).  
+ Also, be sure to match error methods.
+ */
