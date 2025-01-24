@@ -32,6 +32,8 @@ describe('fetchData', ()=>{
 
         await expect(fetchData('https://jsonplaceholder.typicode.com/todos/1')).rejects.toThrow('There was a network error');
     });
+
+
 });
 
 /*

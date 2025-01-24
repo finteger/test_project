@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737597402701" clover="3.2.0">
-  <project timestamp="1737597402701" name="All files">
+<coverage generated="1737684174559" clover="3.2.0">
+  <project timestamp="1737684174559" name="All files">
     <metrics statements="25" coveredstatements="20" conditionals="23" coveredconditionals="16" methods="6" coveredmethods="5" elements="54" coveredelements="41" complexity="0" loc="25" ncloc="25" packages="1" files="4" classes="4"/>
     <file name="add.js" path="C:\Users\nasha\Desktop\test_project\src\functions\add.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
