@@ -6,7 +6,7 @@ const { createUser } = require('../functions/userModel.js');
 jest.mock('mongoose');
 const MockedUser = mongoose.model('User');
 
-describe('User Model Tests', () =>{
+describe('User Model Tests', () => {
     //jest hook
     afterEach(()=>{
         //Clear all mocks after each test case
@@ -26,8 +26,8 @@ describe('User Model Tests', () =>{
 
             //Action
             MockedUser.prototype.save = jest.fn().mockResolvedValue(mockUser);    
-            const result = await createUser('Jack Donald', 'Jack.Donald@gmail.com', 'password', 53);
-        
+            const result = await createUser('Todd Nash', 'odd.Nash@rdpolytech.ca', 'password', 100);
+
             //Assert
             expect(result).toEqual(mockUser);
             expect(MockedUser.prototype.save).toHaveBeenCalledTimes(1);
