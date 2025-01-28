@@ -14,8 +14,24 @@ describe('User Model Tests', () =>{
     });
 
     describe('createUser', ()=>{
-        //test dtypes, unique email, age boundary, validation/verification, 
+        //test dtypes, unique email, age boundary, validation/verification,
 
+        //AAA pattern
+         it('should create the new user',  async () => {
+            //Arrange - setup the variables
+            const mockUser = { name: "Todd Nash",
+                                email: "Todd.Nash@rdpolytech.ca",
+                                password: "password",
+                                age: 100 };
+
+            //Action
+            MockedUser.prototype.save = jest.fn().mockResolvedValue(mockUser);    
+            const result = await createUser('Jack Donald', 'Jack.Donald@gmail.com', 'password', 53);
+        
+            //Assert
+            expect(result).toEqual(mockUser);
+            expect(MockedUser.prototype.save).toHaveBeenCalledTimes(1);
+        });
     });
 });
 

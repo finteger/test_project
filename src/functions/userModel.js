@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
-
+//controller function
 const createUser = async (name, email, password, age) =>{
 
     try {
