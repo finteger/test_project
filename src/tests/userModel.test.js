@@ -12,7 +12,6 @@ describe('User Model Tests', () => {
     });
 
     describe('createUser', ()=>{
-        //test dtypes, unique email, age boundary, validation/verification,
 
         //AAA pattern
          it('should create the new user',  async () => {
