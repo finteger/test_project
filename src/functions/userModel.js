@@ -10,8 +10,7 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 //controller function
-const createUser = async (name, email, password, age) =>{
-
+const createUser = async (name, email, password, age) => {
     try {
          const user = new User({name, email, password, age});
          await user.save();
@@ -19,5 +18,6 @@ const createUser = async (name, email, password, age) =>{
     } catch (error) {
         throw new Error('Error creating new user');
     }
-
 }
+
+module.exports = { createUser, User };

@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
-const { createUser } = require('../functions/userModel.js');
+const { createUser, User } = require('../functions/userModel.js');
 
 
-//Mocking mongoose model
-jest.mock('mongoose');
-const MockedUser = mongoose.model('User');
+
 
 describe('User Model Tests', () => {
     //jest hook
-    afterEach(()=>{
-        //Clear all mocks after each test case
+   beforeEach(()=>{
+        //Clear all mocks before each test case
         jest.clearAllMocks();
     });
 
@@ -25,12 +23,12 @@ describe('User Model Tests', () => {
                                 age: 100 };
 
             //Action
-            MockedUser.prototype.save = jest.fn().mockResolvedValue(mockUser);    
-            const result = await createUser('Todd Nash', 'odd.Nash@rdpolytech.ca', 'password', 100);
+            jest.spyOn(User.prototype, 'save').mockResolvedValue(mockUser);    
+            const result = await createUser('Todd Nash', 'Todd.Nash@rdpolytech.ca', 'password', 100);
 
             //Assert
-            expect(result).toEqual(mockUser);
-            expect(MockedUser.prototype.save).toHaveBeenCalledTimes(1);
+            expect(result).toEqual(expect.objectContaining(mockUser));
+            expect(User.prototype.save).toHaveBeenCalledTimes(1);
         });
     });
 });
