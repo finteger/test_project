@@ -17,25 +17,24 @@
             <button>Submit</button>
         </form>
 
-        <p id="error-message" style="color: red;display: none;">Invalid email or password</p>
+        <p id="error-message" style="color:red;display: none;">Invalid email or password</p>
 
-
-
-        <script>
-            document.getElementById('login-form').addEventListener('submit'), 
-            function(event) {
-                event.preventDefault();
-
-                const email = document.getElementById('email').value;
-
-                const password = document.getElementById('password').value;
-
-                if(email == "test@example.com" && password == "password123"){
-                    alert('Login Successful!')
-                } else {
-                    document.getElementById('error-message').style.display == 'block';
-                }
-            }
-        </script>    
     </body>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', 
+        function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+
+            const password = document.getElementById('password').value;
+
+            if(email == "test@example.com" && password == "password123"){
+                alert('Login Successful!')
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+    </script>    
 </html>
