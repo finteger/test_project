@@ -30,7 +30,7 @@
 
             count++;
 
-            document.getElementById('submitCount').textContent = count;
+            document.getElementById('submitCount').innerHTML = `${count}`;
 
             if(count > 1){
                throw new Error('You have submitted too many times');

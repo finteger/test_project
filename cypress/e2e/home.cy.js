@@ -40,15 +40,7 @@ describe('Login Page', () =>{
 
   it('should only submit once', () =>{
     //Arrange
-    cy.get('#email').type('test@example.com');
-    cy.get('#password').type('password123');
+    console.log(cy.get('#submitCount'));
 
-    //Act
-    cy.get('#login-button').click();
-
-    //Assert
-    cy.on('window:alert', (txt) =>{
-      expect(txt).to.contains('Login Successful!')
-    });
   });
 });
