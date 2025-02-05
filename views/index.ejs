@@ -18,7 +18,7 @@
         </form>
 
         <p id="error-message" style="color:red;display: none;">Invalid email or password</p>
-
+        <div id="submitCount"></div>
     </body>
 
     <script>
@@ -30,9 +30,13 @@
 
             count++;
 
+            document.getElementById('submitCount').textContent = count;
+
             if(count > 1){
                throw new Error('You have submitted too many times');
             }
+
+
 
             const email = document.getElementById('email').value;
 
