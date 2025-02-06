@@ -30,13 +30,7 @@
 
             count++;
 
-            document.getElementById('submitCount').innerHTML = `${count}`;
-
-            if(count > 1){
-               throw new Error('You have submitted too many times');
-            }
-
-
+            document.getElementById('submitCount').textContent = count;
 
             const email = document.getElementById('email').value;
 
@@ -48,5 +42,10 @@
                 document.getElementById('error-message').style.display = 'block';
             }
         });
+
+
+        if(count > 1){
+           throw new Error('You have submitted too many times');
+        }
     </script>    
 </html>
