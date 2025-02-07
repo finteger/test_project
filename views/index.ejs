@@ -24,28 +24,27 @@
     <script>
         var count = 0;
 
-        document.getElementById('login-form').addEventListener('submit', 
-        function(event) {
-            event.preventDefault();
+        function loginSubmit(){
 
-            count++;
+                count++;
 
-            document.getElementById('submitCount').textContent = count;
+                document.getElementById('submitCount').textContent = count;
 
-            const email = document.getElementById('email').value;
+                const email = document.getElementById('email').value;
 
-            const password = document.getElementById('password').value;
+                const password = document.getElementById('password').value;
 
-            if(email == "test@example.com" && password == "password123"){
-                alert('Login Successful!')
-            } else {
-                document.getElementById('error-message').style.display = 'block';
-            }
-        });
+                if(email == "test@example.com" && password == "password123"){
+                    alert('Login Successful!')
+                } else {
+                    document.getElementById('error-message').style.display = 'block';
+                }
 
+                if(count > 1){
+                throw new Error('You have submitted too many times');
+                }
+         }
 
-        if(count > 1){
-           throw new Error('You have submitted too many times');
-        }
+        document.getElementById('login-form').addEventListener('submit', loginSubmit());
     </script>    
 </html>

@@ -38,17 +38,17 @@ describe('Login Page', () =>{
     );
   });
 
-  it('should only submit once', () =>{
+  it('if submitted more than once, raise exception', () =>{
       //Arrange
       cy.get('#email').type('test@example.com');
       cy.get('#password').type('password123');
 
        //Act
-       for(var i = 0; i < 3; i++){
+       for(var i = 0; i > 3; i++){
        cy.get('#login-button').click();
        }
 
        //Assertion  
-       cy.get('#submitCount').should('have.to', '1')
+       expect(loginSubmit).should('throw', Error)
   });
 });
