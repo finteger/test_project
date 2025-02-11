@@ -10,7 +10,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name:  install dependencies
+      - name: install dependencies
         run:  npm install
       - name: run cypress tests
         uses: cypress-io/github-actions@v6
