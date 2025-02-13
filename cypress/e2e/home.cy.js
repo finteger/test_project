@@ -52,4 +52,11 @@ describe('Login Page', () =>{
     });
   });
 
+   
+    it('should test whether the browser auto-fills the password', () =>{
+        cy.reload();
+        cy.get('#email').should('not.have.value');
+        cy.get('#password').should('not.have.value');
+    });
+
 });
