@@ -52,6 +52,28 @@ describe('Login Page', () =>{
     });
   });
 
+
+  //Test against multiple form submissions
+  it('should prevent multiple form submissions' , () => {
+    let alertText = '';
+
+    //Capturing alert messages into a variable
+    cy.on('window:alert', (txt) =>{
+      alertText = txt;
+    });
+
+    cy.get('#email').type('test@example.com');
+    cy.get('#password').type('password123');
+    cy.get('#login-button').click().then(() =>{
+      expect(alertText).to.contains('Login Successful!'); 
+    });
+
+    cy.get('#login-button').click().then(() =>{
+      expect(alertText).to.contains('You have submitted too many times!'); 
+    });
+
+  });
+
    
     it('should test whether the browser auto-fills the password', () =>{
         cy.reload();
