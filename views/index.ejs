@@ -14,7 +14,7 @@
             <br />
             <input type="password" id="password" placeholder="password" />
 
-            <button id="login-button" type="submit" onClick="loginSubmit()">Submit</button>
+            <button id="login-button" type="submit" onClick="loginSubmit(event)">Submit</button>
         </form>
 
        
@@ -22,11 +22,10 @@
     </body>
 
     <script>
-        var count = 0;
+        let submittedSuccessfully = false;
 
-        function loginSubmit(){
-
-                count++;
+        function loginSubmit(event){
+                event.preventDefault();
 
 
                 const email = document.getElementById('email').value;
@@ -39,9 +38,6 @@
                     alert('Invalid credentials');
                 }
 
-                if(count > 1){
-                    throw new Error('You have submitted too many times');
-                }
          }
     </script>    
 </html>
